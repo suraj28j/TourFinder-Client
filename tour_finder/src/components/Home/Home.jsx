@@ -3,6 +3,7 @@ import world from '../../images/world.png'
 import './Home.css'
 import img1 from '../../images/hero-img01.jpg'
 import img2 from '../../images/hero-img02.jpg'
+import video from '../../images/hero-video.mp4'
 import weatherLogo from '../../images/weather.png';
 import guideLogo from '../../images/guide.png';
 import customization from '../../images/customization.png';
@@ -23,16 +24,16 @@ const Home = () => {
                         soluta culpa explicabo neque consequatur eum, laudantium id, eos voluptatibus deserunt velit mollitia impedit facere.
                         Laborum numquam accusantium cumque.</p>
                 </div>
-                <div className='col-md-6'>
-                    <div className='row'>
+                <div className='col-md-6 border'>
+                    <div className='row justify-content-between setImages-row'>
                         <div className='col-md-4'>
                             <img src={img1} alt='img1' className='setImages' />
                         </div>
                         <div className='col-md-4'>
-                            <img src={img2} alt='img1' className='setImages' />
+                            <video src={video} controls className='setImages' />
                         </div>
                         <div className='col-md-4'>
-                            <img src={img1} alt='img1' className='setImages' />
+                            <img src={img2} alt='img2' className='setImages' />
                         </div>
                     </div>
                 </div>
@@ -43,22 +44,22 @@ const Home = () => {
                     <div className='col-md-10'>
 
                         <div className='row mt-4 neumorphism'>
-                            <div className='col-1 '></div>
-                            <div className='col-2 ms-1'>
+                            <div className='col-md-1 '></div>
+                            <div className='col-md-2 ms-1'>
                                 <i className="bi bi-geo-alt"></i> <label className='form-label' htmlFor='location'>Location</label>
                                 <input type='text' id='location' placeholder='where are you going ?' className='form-control' />
                             </div>
-                            <div className='col-1 mt-3 '></div>
-                            <div className='col-2'>
+                            <div className='col-md-1 mt-3 '></div>
+                            <div className='col-md-2'>
                                 <i className="bi bi-geo-alt-fill"></i> <label className='form-label'>Distance</label>
                                 <input type='text' placeholder='distance k/h' className='form-control' />
                             </div>
-                            <div className='col-1 '></div>
-                            <div className='col-2'>
+                            <div className='col-md-1 '></div>
+                            <div className='col-md-2'>
                                 <i className="bi bi-people"></i> <label className='form-label'>Max People</label>
                                 <input type='text' placeholder='0' className='form-control' />
                             </div>
-                            <div className='col-2 me-1 d-flex justify-content-end'>
+                            <div className='col-md-2 me-1 d-flex justify-content-end'>
                                 <button type='submit' className='btn btn-warning mt-4'><i className="bi bi-search fs-4 text-light"></i></button>
                             </div>
                         </div>

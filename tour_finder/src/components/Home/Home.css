@@ -8,6 +8,30 @@
     height: 100%;
 }
 
+/* .setImages-row div:first-child {
+    margin-top: 2%;
+    min-width: 12rem;
+    height: 500px;
+    border: 1px solid;
+    border-radius: 10px;
+
+}
+.setImages-row div:nth-child(2){
+    margin-top: 6%;
+    min-width: 12rem;
+    height: 500px;
+    border: 1px solid red;
+    border-radius: 10px;
+
+}
+.setImages-row div:last-child {
+    margin-top: 10%;
+    min-width: 12rem;
+    height: 500px;
+    border: 1px solid;
+    border-radius: 10px;
+} */
+
 .heading{
     font-size: 4.4rem;
 }
@@ -23,10 +47,10 @@
         -10px -10px 30px #ffffff; 
 }
 
-.vertical {
+/* .vertical {
     border-right: 2px solid black;
     height: 40px;
-}
+} */
 .services-col{
     box-shadow: 1px 1px 2px goldenrod;
 }
