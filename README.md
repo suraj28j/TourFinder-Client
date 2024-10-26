@@ -1,1 +1,1 @@
-# TourFinder-Client
+# Tour Finder App (Client)

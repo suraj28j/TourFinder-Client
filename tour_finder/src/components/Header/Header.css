@@ -1,0 +1,22 @@
+.textColor:visited{
+    color:goldenrod;
+}
+
+.logoDimension{
+    width:130px;
+    height:50px;
+}
+
+.regbtn{
+    background-color: goldenrod;
+    color: white;
+    border-radius: 15px;
+    width: 80px;
+    text-align: center;
+    height: 30px;
+    line-height: 15px;
+    /* margin-top: 7%; */
+}
+
+
+

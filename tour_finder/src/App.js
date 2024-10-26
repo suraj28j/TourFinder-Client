@@ -1,10 +1,12 @@
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Layout from './components/Layouts/Layout';
 
 
 function App() {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Layout />
+    </>
   );
 }
 
