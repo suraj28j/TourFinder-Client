@@ -18,5 +18,8 @@
     /* margin-top: 7%; */
 }
 
+.navhover:hover{
+    color: goldenrod;
+}
 
 
