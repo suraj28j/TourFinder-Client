@@ -10,7 +10,7 @@ export const Card = [
     {
         imgUrl: BangkokImg,
         city: "Bangkok",
-        place: "Snowy Mountains,Thailand",
+        place: "Snowy Mountains, Thailand",
         price: 990,
         rating: 1
     },
