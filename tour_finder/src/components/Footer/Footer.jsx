@@ -3,7 +3,7 @@ import logo from '../../images/logo.png'
 import '../../index.css'
 const Footer = () => {
     return (
-        <div className='container mt-2'>
+        <div className='container mt-4'>
             <div className='row'>
                 <div className="col-md-3 mb-2">
                     <img className='logoDimension' src={logo} alt='logo' />

@@ -39,6 +39,7 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* Searchbar */}
             <form className='mt-4 mb-4'>
                 <div className='row'>
                     <div className='col-md-10'>
@@ -69,7 +70,8 @@ const Home = () => {
                 </div>
             </form>
 
-            <div className='row mt-4'>
+            {/* Services */}
+            <div className='row services_container '>
                 <div className='col-md-3'>
                     <p>What we serve</p>
                     <h2>We offer our best services</h2>

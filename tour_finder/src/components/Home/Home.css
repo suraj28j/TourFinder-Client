@@ -3,6 +3,8 @@
     height: 25px;
 }
 
+
+/* for video and two images */
 .setImages {
     width: 100%;
     height: 100%;
@@ -39,6 +41,8 @@
     font-size: 1.4rem;
 }
 
+
+/* Searchbar */
 .neumorphism {
     padding: 1rem;
     border-radius: 5rem;
@@ -51,6 +55,13 @@
     border-right: 2px solid black;
     height: 40px;
 } */
+
+
+
+/* Services */
+.services_container{
+    margin-top: 10%;
+}
 .services-col{
     box-shadow: 1px 1px 2px goldenrod;
 }
