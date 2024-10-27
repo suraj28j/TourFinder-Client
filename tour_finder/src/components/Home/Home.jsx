@@ -7,7 +7,7 @@ import video from '../../images/hero-video.mp4'
 import weatherLogo from '../../images/weather.png';
 import guideLogo from '../../images/guide.png';
 import customization from '../../images/customization.png';
-
+import { Card } from '../../assets/Card.js'
 
 const Home = () => {
     return (
@@ -101,6 +101,36 @@ const Home = () => {
                         illo provident. Commodi nulla quod doloremque a molestias tempore voluptas perferendis?</p>
                 </div>
             </div>
+
+            {/* Card */}
+            <div className='row g-4 mt-4'>
+                <div>
+                    <p>Explore</p>
+                    <h3>Our feature tours</h3>
+                </div>
+
+                {
+                    Card.map((item) => (
+                        <div className='col-md-3'>
+                            <div class="card" style={{ width: "19rem" }}>
+                                <img src={item.imgUrl} class="card-img-top" alt={item.city} />
+                                <div class="card-body">
+                                    <div className='d-flex justify-content-between'>
+                                        <h5 class="card-title">{item.city}</h5>
+                                        <p><i class="bi bi-star"></i> <span>{item.rating}</span></p>
+                                    </div>
+                                    <p class="card-text">{item.place}</p>
+                                    <div className='d-flex justify-content-between'>
+                                        <p><span className='text-warning'>${item.price}</span>/per person</p>
+                                        <button className='btn btn-warning'>Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+            
 
         </div>
     )

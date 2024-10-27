@@ -22,18 +22,18 @@ const Footer = () => {
                     <p>Tour</p>
                 </div>
                 <div className="col-md-3">
-                <h6 className='mb-4'>Quick Link</h6>
+                    <h6 className='mb-4'>Quick Link</h6>
                     <p>Gallery</p>
                     <p>Login</p>
                     <p>Register</p>
                 </div>
                 <div className="col-md-3">
-                <h6 className='mb-4'>Contact</h6>
-                <p><i className="bi bi-geo-alt"></i> Address: Brookfield Bangalore</p>
-                <p><i className="bi bi-envelope"></i> Email: suraj28j@gmail.com</p>
+                    <h6 className='mb-4'>Contact</h6>
+                    <p><i className="bi bi-geo-alt"></i> Address: Brookfield Bangalore</p>
+                    <p><i className="bi bi-envelope"></i> Email: suraj28j@gmail.com</p>
                 </div>
             </div>
-            <p className='text-center'>Copyright 2024 Design and develov by Suraj Kumar. All rights recived</p>
+            <p className='text-center mt-4'>Copyright 2024 Design and develov by Suraj Kumar. All rights recived</p>
         </div>
     )
 }
