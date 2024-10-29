@@ -66,7 +66,7 @@
 
 .services-col {
     /* box-shadow: 1px 1px 2px goldenrod; */
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 .services {
@@ -97,7 +97,6 @@
 }
 
 
-
 .item {
     display: grid;
     gap: 10px;
@@ -110,3 +109,14 @@
     border-radius: 10px;
 }
   
+
+/* clients */
+.clients{
+    margin-top: 10%;
+}
+
+/* subscribe */
+.subscribe{
+    margin-top: 10%;
+    background-color: skyblue;
+}
