@@ -29,8 +29,8 @@ const Footer = () => {
                 </div>
                 <div className="col-md-3">
                     <h6 className='mb-4'>Contact</h6>
-                    <p><i className="bi bi-geo-alt"></i> Address: Brookfield Bangalore</p>
-                    <p><i className="bi bi-envelope"></i> Email: suraj28j@gmail.com</p>
+                    <p><i className="bi bi-geo-alt text-warning"></i> Address: Brookfield Bangalore</p>
+                    <p><i className="bi bi-envelope text-warning"></i> Email: suraj28j@gmail.com</p>
                 </div>
             </div>
             <p className='text-center mt-4'>Copyright 2024 Design and develov by Suraj Kumar. All rights recived</p>
