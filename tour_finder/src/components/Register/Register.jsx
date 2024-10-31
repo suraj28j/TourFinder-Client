@@ -23,7 +23,7 @@ const Register = () => {
                   <input type='email' className='form-control mt-3' placeholder='Email' />
                   <input type='password' className='form-control mt-3' placeholder='Password' />
                   <button className='btn btn-dark mt-3 w-100'>Creat Account</button>
-                  <p className='mt-4'>Already have an account? <Link to='/login' className='text-dark text-decoration-none'>Login</Link></p>
+                  <p className='mt-4'>Already have an account? <Link to='/login' className='nav-link text-dark'>Login</Link></p>
                 </form>
               </div>
             </div>

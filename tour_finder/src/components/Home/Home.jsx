@@ -21,6 +21,7 @@ import galleryImg8 from '../../assets/images/gallery-08.jpg'
 import maleTourist from '../../assets/images/male-tourist.png'
 
 import SimpleSlider from '../Slider/SimpleSlider.jsx'
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
@@ -137,10 +138,10 @@ const Home = () => {
                                             <h5 className="card-title">{item.city}</h5>
                                             <p><i className="bi bi-star"></i> <span>{item.rating}</span></p>
                                         </div>
-                                        <p className="card-text">{item.place}</p>
+                                       <p className="card-text"><Link to='/tours' className='nav-link navhover'>{item.place}</Link></p>
                                         <div className='d-flex justify-content-between'>
                                             <p><span className='text-warning'>${item.price}</span>/per person</p>
-                                            <button className='btn btn-warning'>Book Now</button>
+                                            <Link to='/tours'><button className='btn btn-warning'>Book Now</button></Link>
                                         </div>
                                     </div>
                                 </div>

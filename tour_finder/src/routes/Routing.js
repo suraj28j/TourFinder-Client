@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from '../components/Home/Home'
 import Login from '../components/Login/Login'
 import Register from '../components/Register/Register'
-import Tour from '../components/Tour/Tour'
+import Tours from '../components/Tours/Tours'
 
 
 const Routing = () => {
@@ -12,7 +12,7 @@ const Routing = () => {
             <Route path='/' element={<Home/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='/register' element={<Register/>} />
-            <Route path='/tour' element={<Tour/>} />
+            <Route path='/tours' element={<Tours/>} />
         </Routes>
     )
 }

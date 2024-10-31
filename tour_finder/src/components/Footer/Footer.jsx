@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from '../../assets/images/logo.png'
 import '../../index.css'
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
     return (
         <div className='container mt-4'>
@@ -17,15 +19,15 @@ const Footer = () => {
                 </div>
                 <div className="col-md-3">
                     <h6 className='mb-4'>Dicover</h6>
-                    <p>Home</p>
-                    <p>About</p>
-                    <p>Tour</p>
+                    <p><Link className='nav-link' to='/'>Home</Link></p>
+                    <p><Link className='nav-link' to='/about'>About</Link></p>
+                    <p><Link className='nav-link' to='/tours'>Tours</Link></p>
                 </div>
                 <div className="col-md-3">
                     <h6 className='mb-4'>Quick Link</h6>
                     <p>Gallery</p>
-                    <p>Login</p>
-                    <p>Register</p>
+                    <p><Link className='nav-link' to='/login'>Login</Link></p>
+                    <p><Link className='nav-link' to='/register'>Register</Link></p>
                 </div>
                 <div className="col-md-3">
                     <h6 className='mb-4'>Contact</h6>

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
-    <div className='container ' style={{marginTop:'5%'}}>
+    <div className='container' style={{marginTop:'5%'}}>
       <div className='row'>
         <div className='col-md-3'></div>
         <div className='col-md-6'>
@@ -25,7 +25,7 @@ const Login = () => {
                   <input type='email' className='form-control mt-4' placeholder='Email' />
                   <input type='password' className='form-control mt-3' placeholder='Password' />
                   <button className='btn btn-dark mt-3 w-100'>Login</button>
-                  <p className='mt-4'>Don't have an account? <Link to='/register' className='text-dark text-decoration-none'>Register</Link></p>
+                  <p className='mt-4'>Don't have an account? <Link to='/register' className='nav-link text-dark'>Register</Link></p>
                 </form>
               </div>
             </div>
