@@ -85,6 +85,11 @@
 .card {
     box-shadow: 1px 1px 20px rgb(208, 205, 205);
     border: 0px;
+    transition: transform 0.5s linear;
+    cursor: pointer;
+}
+.card:hover{
+    transform: scale(1.07);
 }
 
 

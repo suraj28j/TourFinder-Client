@@ -22,6 +22,7 @@ import maleTourist from '../../assets/images/male-tourist.png'
 
 import SimpleSlider from '../Slider/SimpleSlider.jsx'
 import { Link } from 'react-router-dom'
+import FeaturedTours from './FeaturedTours.jsx'
 
 
 const Home = () => {
@@ -122,7 +123,7 @@ const Home = () => {
                 </div>
 
                 {/* Card */}
-                <div className='row g-4 mt-4'>
+                {/* <div className='row g-4 mt-4'>
                     <div>
                         <p>Explore</p>
                         <h3>Our feature tours</h3>
@@ -148,7 +149,9 @@ const Home = () => {
                             </div>
                         ))
                     }
-                </div>
+                </div> */}
+
+                <FeaturedTours/>
 
                 <div className='row mt-4'>
                     <div className='col-md-6'>

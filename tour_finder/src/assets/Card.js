@@ -64,3 +64,5 @@ export const Card = [
         rating: 5
     }
 ]
+
+
