@@ -19,7 +19,7 @@ const Subscribe = () => {
                         Natus laborum enim vero vel! Quasi, neque!</p>
                 </div>
                 <div className='col-md-5 d-flex justify-content-center'>
-                    <img src={maleTourist} alt='male-tourist' className='h-50 mb-4' />
+                    <img src={maleTourist} alt='male-tourist' className='mb-4' style={{height:"18rem"}} />
                 </div>
                 <div className='col-md-1'></div>
             </div>

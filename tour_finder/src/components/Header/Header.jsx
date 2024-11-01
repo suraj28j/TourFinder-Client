@@ -19,13 +19,13 @@ const Header = () => {
                             <Link className="nav-link navhover" to='/'>Home</Link>
                         </li>
                         <li className="nav-item ">
-                            <Link className="nav-link navhover" to='tours'>Tours</Link>
+                            <Link className="nav-link navhover" to='/tours'>Tours</Link>
                         </li>
                         <li className="nav-item ">
-                            <Link className="nav-link navhover" to='login'>Login</Link>
+                            <Link className="nav-link navhover" to='/login'>Login</Link>
                         </li>
                         <li className="nav-item ">
-                            <Link className="nav-link navhover" to='register'>Register</Link>
+                            <Link className="nav-link navhover" to='/register'>Register</Link>
                         </li>
                     </ul>
                 </div>
