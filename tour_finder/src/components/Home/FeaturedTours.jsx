@@ -8,7 +8,7 @@ const FeaturedTours = () => {
     console.log("tours", tours);
 
     return (
-        <>
+        <div className='container'>
             {loading && <h1>Loading</h1>}
             {error && <h1>{error}</h1>}
 
@@ -21,29 +21,29 @@ const FeaturedTours = () => {
                         </div>
 
                         {
-                        tours.map((item) => (
-                            <div className='col-md-3' key={item.place}>
-                                <div className="card" style={{ width: "19rem" }}>
-                                    <img src={item.photo} className="card-img-top" alt={item.city} />
-                                    <div className="card-body">
-                                        <div className='d-flex justify-content-between'>
-                                            <h5 className="card-title">{item.city}</h5>
-                                            <p><i className="bi bi-star"></i> <span>{item.reviews}</span></p>
-                                        </div>
-                                       <p className="card-text"><Link to='/tours' className='nav-link navhover'>{item.title}</Link></p>
-                                        <div className='d-flex justify-content-between'>
-                                            <p><span className='text-warning'>${item.price}</span>/per person</p>
-                                            <Link to='/tours'><button className='btn btn-warning'>Book Now</button></Link>
+                            tours.map((item) => (
+                                <div className='col-md-3' key={item.place}>
+                                    <div className="card" style={{ width: "19rem" }}>
+                                        <img src={item.photo} className="card-img-top" alt={item.city} />
+                                        <div className="card-body">
+                                            <div className='d-flex justify-content-between'>
+                                                <h5 className="card-title">{item.city}</h5>
+                                                <p><i className="bi bi-star"></i> <span>{item.reviews}</span></p>
+                                            </div>
+                                            <p className="card-text"><Link to='/tours' className='nav-link navhover'>{item.title}</Link></p>
+                                            <div className='d-flex justify-content-between'>
+                                                <p><span className='text-warning'>${item.price}</span>/per person</p>
+                                                <Link to='/tours'><button className='btn btn-warning'>Book Now</button></Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))
-                    }
+                            ))
+                        }
                     </div>
                 </>
             )}
-        </>
+        </div>
     )
 }
 

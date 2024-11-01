@@ -61,13 +61,13 @@
 
 /* Services */
 .services_container {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
-.services-col {
-    /* box-shadow: 1px 1px 2px goldenrod; */
-    /* border: 1px solid; */
-}
+/* .services-col {
+    box-shadow: 1px 1px 2px goldenrod;
+    border: 1px solid;
+} */
 
 .services {
     width: 5rem;
