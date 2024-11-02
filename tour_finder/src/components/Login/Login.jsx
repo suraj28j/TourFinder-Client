@@ -3,7 +3,7 @@ import loginImg from '../../assets/images/login.png'
 import userImg from '../../assets/images/user.png'
 import './Login.css';
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../../utilis/config';
 import { AuthContext } from '../../context/AuthContext';
 
@@ -11,6 +11,8 @@ import { AuthContext } from '../../context/AuthContext';
 const Login = () => {
 
   const { dispatch } = useContext(AuthContext)
+
+  const nevigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
     email: undefined,
@@ -33,7 +35,6 @@ const Login = () => {
       const result = await res.json();
       console.log(result);
 
-      result.success === true ? alert("Login Successful") : alert("Login Failed");
 
       dispatch({
         type: "LOGIN_SUCCESS",
@@ -41,6 +42,13 @@ const Login = () => {
         token: result.token,
         role: result.role
       })
+
+      if (result.success === true) {
+        alert("Login Successful");
+        nevigate("/");
+      } else {
+        alert("Login Failed");
+      }
 
     } catch (error) {
       dispatch(

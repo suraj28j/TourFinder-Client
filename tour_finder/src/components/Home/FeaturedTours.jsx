@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const FeaturedTours = () => {
     const { data: tours, loading, error } = useFetch(`${BASE_URL}/tour/getalltour`);
-    console.log("tours", tours);
+    // console.log("tours", tours);
 
     return (
         <div className='container'>

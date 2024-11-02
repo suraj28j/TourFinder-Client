@@ -22,4 +22,8 @@
     color: goldenrod;
 }
 
+.name,.logout{
+    border-radius: 15px;
+}
+
 
