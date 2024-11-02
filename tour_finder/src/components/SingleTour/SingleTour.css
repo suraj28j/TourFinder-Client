@@ -1,0 +1,12 @@
+
+.input-group input {
+    border: 0px;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+.star{
+    cursor: pointer;
+}

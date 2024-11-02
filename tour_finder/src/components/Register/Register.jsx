@@ -11,6 +11,7 @@ const Register = () => {
     password: undefined
   })
 
+  
   const handleChange = (e) => {
     setCredentials((preVal) => ({ ...preVal, [e.target.id]: e.target.value }))
   }

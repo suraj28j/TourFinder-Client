@@ -37,7 +37,7 @@ const Header = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item ">
-                                        <Link className="nav-link navhover" to='/edituser'>
+                                        <Link className="nav-link navhover" to={`/updateuser/${user._id}`}>
                                             <button className="btn btn-warning ms-3 name">{user.name}</button>
                                         </Link>
                                     </li>
