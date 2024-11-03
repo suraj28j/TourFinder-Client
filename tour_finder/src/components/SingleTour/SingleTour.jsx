@@ -9,7 +9,7 @@ import { AuthContext } from '../../context/AuthContext';
 
 
 const SingleTour = () => {
-  window.scrollTo(0, 0)
+  // window.scrollTo(0, 0)
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext)
@@ -127,9 +127,9 @@ const SingleTour = () => {
         
         {/* for User Information and Booking */}
         <div className='col-md-4 text-center border h-100'>
-          <h4 className='mt-4'>{tours.price}/Per person <i className="bi bi-star text-warning"></i> {tours.reviews}</h4>
+          <h4 className=' priceperperson'>{tours.price}/Per person <i className="bi bi-star ms-4 text-warning"></i> {tours.reviews}</h4>
           <hr></hr>
-          <h6>Information</h6>
+          <h6 className='information'>Information</h6>
           <form className='userInfo border'>
             <input type='text' placeholder='Full Name' className='form-control' />
             <hr className='ms-3 me-3'/>
@@ -138,7 +138,7 @@ const SingleTour = () => {
             <input type='date' className='form-control' />
           </form>
           {/* for booking charge */}
-          <div className='mt-4 m-4'>
+          <div className='bookingcharge'>
               <div className='d-flex justify-content-between'>
                 <p>{tours.price} * 1 person</p>
                 <p>{tours.price}</p>
