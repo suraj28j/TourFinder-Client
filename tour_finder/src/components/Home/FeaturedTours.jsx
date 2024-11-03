@@ -30,7 +30,7 @@ const FeaturedTours = () => {
                                                 <h5 className="card-title">{item.city}</h5>
                                                 <p><i className="bi bi-star"></i> <span>{item.reviews}</span></p>
                                             </div>
-                                            <p className="card-text"><Link to='/tours' className='nav-link navhover'>{item.title}</Link></p>
+                                            <p className="card-text"><Link to={`/tours/${item._id}`} className='nav-link navhover'>{item.title}</Link></p>
                                             <div className='d-flex justify-content-between'>
                                                 <p><span className='text-warning'>${item.price}</span>/per person</p>
                                                 <Link to={`/tours/${item._id}`}><button className='btn btn-warning'>Book Now</button></Link>

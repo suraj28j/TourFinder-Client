@@ -2,7 +2,7 @@ import React from 'react'
 import world from '../../assets/images/world.png'
 import img1 from '../../assets/images/hero-img01.jpg'
 import img2 from '../../assets/images/hero-img02.jpg'
-import video from '../../assets/images/hero-video.mp4'
+import video from '../../assets/videos/hero-video.mp4'
 
 const Heading = () => {
     return (

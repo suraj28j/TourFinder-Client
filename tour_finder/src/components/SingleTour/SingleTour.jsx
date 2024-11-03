@@ -1,29 +1,58 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './SingleTour.css';
 import { FaStar } from 'react-icons/fa'
 
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import useFetch from '../Hooks/useFetch';
 import { BASE_URL } from '../../utilis/config';
+import { AuthContext } from '../../context/AuthContext';
+
 
 const SingleTour = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext)
 
   const [rating, setRating] = useState(null);
+  const [comment, setComment] = useState("");
+  
   const [hover, setHover] = useState(null);
-
-  const[comment,setComment] = useState("")
 
   const handleChange = (e) => {
     setComment(e.target.value)
   }
-  const handleClick = (e) => {
+
+  // for add review and comment //
+  const handleClick = async (e) => {
     e.preventDefault();
-    console.log("Rating",rating);
-    console.log(comment);
-    
-    
+    if (user !== null) {
+      // console.log(rating, comment, id, user);
+      try {
+        const res = await fetch(`${BASE_URL}/tour/review`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ rating, comment, id, user })
+        });
+        const result = await res.json();
+        // console.log("result : ", result);
+        
+        if (result.success === true) {
+          alert("Review Added")
+          navigate(`/tours`)
+        } else {
+          alert("Somthing error")
+        }
+
+      } catch (error) {
+        console.log("Internal Error", error);
+      }
+
+    } else {
+      alert("Please Login")
+    }
   }
+
+
 
   const { data: tours, loading, error } = useFetch(`${BASE_URL}/tour/getsingletour/${id}`);
   // console.log(tours);
@@ -79,10 +108,16 @@ const SingleTour = () => {
 
             <form className='m-4' onSubmit={handleClick}>
               <div className="input-group mt-4 border p-2 text-center">
-                <input type="text" className="form-control" placeholder="Share your thoughts" onChange={handleChange}/>
+                <input type="text" className="form-control" placeholder="Share your thoughts" onChange={handleChange} />
                 <button className='btn btn-warning text-light'>Submit</button>
               </div>
             </form>
+
+            {/* <div className='ms-4 d-flex justify-content-between'>
+            <div className='userIcon'></div>
+            <div className='starIcon'></div>
+            </div> */}
+
           </div>
 
         </div>
