@@ -14,7 +14,7 @@ const Gallery = () => {
        <div className='row'>
                     <p><spna className='bg-warning p-1'>Gallery</spna></p>
                     <h3>Visit our customers tour gallery</h3>
-                    <div className='item mt-4'>
+                    <div className='item mt-4 gallery' >
                         <img src={galleryImg1} alt='galleryImg1' />
                         <img src={galleryImg2} alt='galleryImg2' />
                         <img src={galleryImg3} alt='galleryImg3' />

@@ -10,3 +10,14 @@ input[type=radio]{
 .star{
     cursor: pointer;
 }
+
+.userInfo{
+    margin: 5% 8% 0% 8%;
+    /* border: 1px solid; */
+}
+.userInfo input{
+    border: 0px;
+    /* margin-top: 5%; */
+    margin: 5% ;
+    width: 90%;
+}

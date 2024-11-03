@@ -27,10 +27,10 @@ const FeaturedTours = () => {
                                         <img src={item.photo} className="card-img-top" alt={item.city} />
                                         <div className="card-body">
                                             <div className='d-flex justify-content-between'>
-                                                <h5 className="card-title">{item.city}</h5>
+                                                <h6 className="card-title">{item.city}</h6>
                                                 <p><i className="bi bi-star"></i> <span>{item.reviews}</span></p>
                                             </div>
-                                            <p className="card-text"><Link to={`/tours/${item._id}`} className='nav-link navhover'>{item.title}</Link></p>
+                                            <h5 className="card-text"><Link to={`/tours/${item._id}`} className='nav-link navhover'>{item.title}</Link></h5>
                                             <div className='d-flex justify-content-between'>
                                                 <p><span className='text-warning'>${item.price}</span>/per person</p>
                                                 <Link to={`/tours/${item._id}`}><button className='btn btn-warning'>Book Now</button></Link>

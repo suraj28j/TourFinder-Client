@@ -9,6 +9,7 @@ import { AuthContext } from '../../context/AuthContext';
 
 
 const SingleTour = () => {
+  window.scrollTo(0, 0)
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext)
@@ -55,11 +56,13 @@ const SingleTour = () => {
 
 
   const { data: tours, loading, error } = useFetch(`${BASE_URL}/tour/getsingletour/${id}`);
-  // console.log(tours);
+  // console.log(tours)
 
   return (
     <div className='container mt-4'>
       <div className='row'>
+
+        {/* for Tour Image and user rating & comment */}
         <div className='col-md-8 mb-2'>
           <div className='row ms-1 me-1 '>
             <img src={tours.photo} alt='' className='img-fluid' />
@@ -81,6 +84,7 @@ const SingleTour = () => {
             <p className=' ms-3 mt-2'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
           </div>
 
+          {/* for user rating and comment */}
           <div className='border mt-4 ms-1 me-1'>
             <h3 className='ms-4 mt-4'>Reviews ({tours.reviews} reviews)</h3>
 
@@ -109,7 +113,7 @@ const SingleTour = () => {
             <form className='m-4' onSubmit={handleClick}>
               <div className="input-group mt-4 border p-2 text-center">
                 <input type="text" className="form-control" placeholder="Share your thoughts" onChange={handleChange} />
-                <button className='btn btn-warning text-light'>Submit</button>
+                <button className='btn btn-warning'>Submit</button>
               </div>
             </form>
 
@@ -117,21 +121,40 @@ const SingleTour = () => {
             <div className='userIcon'></div>
             <div className='starIcon'></div>
             </div> */}
-
           </div>
 
         </div>
-
-        <div className='col-md-4 text-center border'>
-
+        
+        {/* for User Information and Booking */}
+        <div className='col-md-4 text-center border h-100'>
           <h4 className='mt-4'>{tours.price}/Per person <i className="bi bi-star text-warning"></i> {tours.reviews}</h4>
           <hr></hr>
-          <p>Information</p>
-          <form>
-            <input type='text' placeholder='Full Name' />
+          <h6>Information</h6>
+          <form className='userInfo border'>
+            <input type='text' placeholder='Full Name' className='form-control' />
+            <hr className='ms-3 me-3'/>
+            <input type='text' placeholder='Phone Number' className='form-control' />
+            <hr className='ms-3 me-3'/>
+            <input type='date' className='form-control' />
           </form>
-
+          {/* for booking charge */}
+          <div className='mt-4 m-4'>
+              <div className='d-flex justify-content-between'>
+                <p>{tours.price} * 1 person</p>
+                <p>{tours.price}</p>
+              </div>
+              <div className='d-flex justify-content-between'>
+                <p>Service Charges</p>
+                <p>10</p>
+              </div>
+              <div className='d-flex justify-content-between'>
+                <h6>Total</h6>
+                <h6>{tours.price+10}</h6>
+              </div>
+              <button className='btn btn-warning mb-4 mt-4 w-75'>Book Now</button>
+          </div>
         </div>
+
       </div>
     </div>
   )

@@ -92,7 +92,7 @@
     transform: scale(1.07);
 }
 
-
+/* Experince */
 .numBox {
     width: 80px;
     height: 80px;
@@ -101,7 +101,7 @@
     border-radius: 10px 5px 10px 5px;
 }
 
-
+/* Gallery */
 .item {
     display: grid;
     gap: 10px;
@@ -112,6 +112,10 @@
     width: 300px;
     height: auto;
     border-radius: 10px;
+    transition: all 0.5s linear;
+}
+.item img:hover{
+    transform: scale(1.07);
 }
   
 
@@ -125,3 +129,4 @@
     margin-top: 10%;
     background-color: skyblue;
 }
+
