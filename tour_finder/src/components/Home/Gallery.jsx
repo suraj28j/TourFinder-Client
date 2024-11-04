@@ -11,20 +11,22 @@ import galleryImg8 from '../../assets/images/gallery-08.jpg'
 const Gallery = () => {
   return (
     <div className='container'>
-       <div className='row'>
-                    <p><spna className='bg-warning p-1'>Gallery</spna></p>
-                    <h3>Visit our customers tour gallery</h3>
-                    <div className='item mt-4 gallery' >
-                        <img src={galleryImg1} alt='galleryImg1' />
-                        <img src={galleryImg2} alt='galleryImg2' />
-                        <img src={galleryImg3} alt='galleryImg3' />
-                        <img src={galleryImg4} alt='galleryImg4' />
-                        <img src={galleryImg5} alt='galleryImg5' />
-                        <img src={galleryImg6} alt='galleryImg6' />
-                        <img src={galleryImg7} alt='galleryImg7' />
-                        <img src={galleryImg8} alt='galleryImg8' />
-                    </div>
-                </div>
+      <div className='row'>
+        <p><spna className='bg-warning p-2 italicFont'>Gallery</spna></p>
+        <h3>Visit our customers tour gallery</h3>
+        {/* <div className='row'> */}
+          <div className='item mt-4 gallery' >
+            <img src={galleryImg1} alt='galleryImg1' />
+            <img src={galleryImg2} alt='galleryImg2' />
+            <img src={galleryImg3} alt='galleryImg3' />
+            <img src={galleryImg4} alt='galleryImg4' />
+            <img src={galleryImg5} alt='galleryImg5' />
+            <img src={galleryImg6} alt='galleryImg6' />
+            <img src={galleryImg7} alt='galleryImg7' />
+            <img src={galleryImg8} alt='galleryImg8' />
+          </div>
+        {/* </div> */}
+      </div>
     </div>
   )
 }

@@ -19,7 +19,7 @@ const ClientsReview = () => {
     return (
         <div className='container'>
             <div className='row clients'>
-                <p><span className='bg-warning p-1'>Client Love</span></p>
+                <p><span className='bg-warning p-2 italicFont'>Client Love</span></p>
                 <h3>What our clients say about us</h3>
                 <Slider {...settings}>
 

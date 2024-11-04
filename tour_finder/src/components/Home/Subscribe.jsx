@@ -10,16 +10,16 @@ const Subscribe = () => {
                     <h3>Subscribe now for useful</h3>
                     <h3>travling information</h3>
 
-                    <div className="input-group mt-4">
-                        <input type="text" className="form-control p-2" placeholder="Enter your email" />
-                        <button className='btn btn-warning text-light'>Subscribe</button>
+                    <div className="inputGroup mt-4">
+                        <input type="text" className="p-2" placeholder="Enter your email" />
+                        <button className='bg-warning ps-3 pe-3'>Subscribe</button>
                     </div>
 
                     <p className='mt-4'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                         Natus laborum enim vero vel! Quasi, neque!</p>
                 </div>
                 <div className='col-md-5 d-flex justify-content-center'>
-                    <img src={maleTourist} alt='male-tourist' className='mb-4' style={{height:"18rem"}} />
+                    <img src={maleTourist} alt='male-tourist' className='mb-4' style={{ height: "18rem" }} />
                 </div>
                 <div className='col-md-1'></div>
             </div>

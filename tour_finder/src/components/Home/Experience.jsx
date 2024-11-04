@@ -3,12 +3,12 @@ import experienceImg from '../../assets/images/experience.png';
 
 const Experience = () => {
     return (
-        <div className='container'>
-            <div className='row mt-4'>
+        <div className='container experience'>
+            <div className='row'>
                 <div className='col-md-6'>
 
-                    <p>Experience</p>
-                    <h3>With our all experience</h3>
+                    <p className='bg-warning italicFont'>Experience</p>
+                    <h3 className='mt-4'>With our all experience</h3>
                     <h3>we will servr you</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, incidunt. Placeat voluptates similique blanditiis
                         quae id perspiciatis fuga deserunt voluptate.</p>

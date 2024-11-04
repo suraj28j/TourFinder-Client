@@ -23,33 +23,39 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
                         <li className="nav-item">
-                            <Link className="nav-link navhover" to='/'>Home</Link>
+                            <Link className="nav-link navhover " to='/'>
+                                <button className='btn fw-semibold'>Home</button>
+                            </Link>
                         </li>
                         <li className="nav-item ">
-                            <Link className="nav-link navhover" to='/tours'>Tours</Link>
+                            <Link className="nav-link navhover " to='/tours'>
+                                <button className='btn fw-semibold'>Tours</button>
+                            </Link>
                         </li>
                         {
                             user ? (
                                 <>
                                     <li className="nav-item ">
                                         <Link className="nav-link navhover" to='/'>
-                                            <button className="btn btn-dark ms-3 logout" type='submit' onClick={logoutHandler}>Logout</button>
+                                            <button className="btn btn-dark ms-3 fw-semibold logout" type='submit' onClick={logoutHandler}>Logout</button>
                                         </Link>
                                     </li>
                                     <li className="nav-item ">
                                         <Link className="nav-link navhover" to={`/updateuser/${user._id}`}>
-                                            <button className="btn btn-warning ms-3 name">{user.name}</button>
+                                            <button className="btn btn-warning ms-3 fw-semibold name">{user.name}</button>
                                         </Link>
                                     </li>
                                 </>
                             ) : (
                                 <>
                                     <li className="nav-item ">
-                                        <Link className="nav-link navhover" to='/login'>Login</Link>
+                                        <Link className="nav-link navhover" to='/login'>
+                                            <button className='btn fw-semibold'>Login</button>
+                                        </Link>
                                     </li>
                                     <li className="nav-item ">
                                         <Link className="nav-link navhover" to='/register'>
-                                            <button className="btn btn-warning ms-3  ">Register</button>
+                                            <button className="btn btn-warning ms-3 fw-semibold">Register</button>
                                         </Link>
                                     </li>
                                 </>

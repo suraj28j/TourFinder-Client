@@ -16,8 +16,8 @@ const FeaturedTours = () => {
                 <>
                     <div className='row g-4 mt-4'>
                         <div>
-                            <p>Explore</p>
-                            <h3>Our feature tours</h3>
+                            <p className='bg-warning italicFont p-2'>Explore</p>
+                            <h3 className='mt-4'>Our feature tours</h3>
                         </div>
 
                         {
