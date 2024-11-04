@@ -16,7 +16,7 @@ const SingleTour = () => {
 
   const [rating, setRating] = useState(null);
   const [comment, setComment] = useState("");
-  
+
   const [hover, setHover] = useState(null);
 
   const handleChange = (e) => {
@@ -36,7 +36,7 @@ const SingleTour = () => {
         });
         const result = await res.json();
         // console.log("result : ", result);
-        
+
         if (result.success === true) {
           alert("Review Added")
           navigate(`/tours`)
@@ -65,7 +65,7 @@ const SingleTour = () => {
         {/* for Tour Image and user rating & comment */}
         <div className='col-md-8 mb-2'>
           <div className='row ms-1 me-1 '>
-            <img src={tours.photo} alt='' className='img-fluid' />
+            <img src={tours.photo} alt='tour-img' className='img-fluid'/>
           </div>
 
           <div className='border mt-4 ms-1 me-1'>
@@ -99,7 +99,7 @@ const SingleTour = () => {
                       onClick={() => setRating(index + 1)}
                     />
                     <FaStar
-                      className='star'
+                      className='star ms-1'
                       size={30}
                       color={(index + 1) <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
                       onMouseEnter={() => setHover(index + 1)}
@@ -111,9 +111,9 @@ const SingleTour = () => {
             </div>
 
             <form className='m-4' onSubmit={handleClick}>
-              <div className="input-group mt-4 border p-2 text-center">
-                <input type="text" className="form-control" placeholder="Share your thoughts" onChange={handleChange} />
-                <button className='btn btn-warning'>Submit</button>
+              <div className=" mt-4 p-2 InputGroup ">
+                <input type="text" className=" me-2 p-2" placeholder="Share your thoughts" onChange={handleChange} />
+                <button className='btn btn-warning me-1'>Submit</button>
               </div>
             </form>
 
@@ -124,7 +124,7 @@ const SingleTour = () => {
           </div>
 
         </div>
-        
+
         {/* for User Information and Booking */}
         <div className='col-md-4 text-center border h-100'>
           <h4 className=' priceperperson'>{tours.price}/Per person <i className="bi bi-star ms-4 text-warning"></i> {tours.reviews}</h4>
@@ -132,26 +132,26 @@ const SingleTour = () => {
           <h6 className='information'>Information</h6>
           <form className='userInfo border'>
             <input type='text' placeholder='Full Name' className='form-control' />
-            <hr className='ms-3 me-3'/>
+            <hr className='ms-3 me-3' />
             <input type='text' placeholder='Phone Number' className='form-control' />
-            <hr className='ms-3 me-3'/>
+            <hr className='ms-3 me-3' />
             <input type='date' className='form-control' />
           </form>
           {/* for booking charge */}
           <div className='bookingcharge'>
-              <div className='d-flex justify-content-between'>
-                <p>{tours.price} * 1 person</p>
-                <p>{tours.price}</p>
-              </div>
-              <div className='d-flex justify-content-between'>
-                <p>Service Charges</p>
-                <p>10</p>
-              </div>
-              <div className='d-flex justify-content-between'>
-                <h6>Total</h6>
-                <h6>{tours.price+10}</h6>
-              </div>
-              <button className='btn btn-warning mb-4 mt-4 w-75'>Book Now</button>
+            <div className='d-flex justify-content-between'>
+              <p>{tours.price} * 1 person</p>
+              <p>{tours.price}</p>
+            </div>
+            <div className='d-flex justify-content-between'>
+              <p>Service Charges</p>
+              <p>10</p>
+            </div>
+            <div className='d-flex justify-content-between'>
+              <h6>Total</h6>
+              <h6>{tours.price + 10}</h6>
+            </div>
+            <button className='btn btn-warning mb-4 mt-4 w-75'>Book Now</button>
           </div>
         </div>
 

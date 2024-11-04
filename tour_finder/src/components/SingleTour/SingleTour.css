@@ -29,3 +29,28 @@ input[type=radio]{
     margin: 5% 9% 0% 9%;
     /* border: 1px solid; */
 }
+.btn{
+    border-radius: 50px;
+   
+}
+.InputGroup{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border-radius: 50px;
+    border: 2px solid goldenrod;
+    align-items: center;
+    height: 5rem;
+}
+.InputGroup input{
+    width: 100%;
+    outline: none;
+    border: 0px;
+
+}
+.InputGroup button{
+    width: 7rem;
+    padding:13px;
+    /* margin-bottom: 3px; */
+}
+

@@ -10,7 +10,7 @@ const Subscribe = () => {
                     <h3>Subscribe now for useful</h3>
                     <h3>travling information</h3>
 
-                    <div class="input-group mt-4">
+                    <div className="input-group mt-4">
                         <input type="text" className="form-control p-2" placeholder="Enter your email" />
                         <button className='btn btn-warning text-light'>Subscribe</button>
                     </div>

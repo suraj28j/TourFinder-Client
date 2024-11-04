@@ -49,7 +49,7 @@ const Header = () => {
                                     </li>
                                     <li className="nav-item ">
                                         <Link className="nav-link navhover" to='/register'>
-                                            <button className="btn btn-warning ms-3  name">Register</button>
+                                            <button className="btn btn-warning ms-3  ">Register</button>
                                         </Link>
                                     </li>
                                 </>
