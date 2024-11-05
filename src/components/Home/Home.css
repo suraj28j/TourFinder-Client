@@ -18,33 +18,29 @@
 
 
 /* for video and two images */
-.setImages {
+.setImages{
     width: 100%;
     height: 100%;
-}
-/* .setImages-row div:first-child {
-    margin-top: 2%;
-    min-width: 12rem;
-    height: 500px;
-    border: 1px solid;
     border-radius: 10px;
-
 }
-.setImages-row div:nth-child(2){
-    margin-top: 6%;
-    min-width: 12rem;
-    height: 500px;
-    border: 1px solid red;
+.setVideo{
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
-
+    /* border: 2px solid; */
 }
-.setImages-row div:last-child {
+.setMedia div:first-child {
     margin-top: 10%;
-    min-width: 12rem;
-    height: 500px;
-    border: 1px solid;
-    border-radius: 10px;
-} */
+    height: 360px;
+}
+.setMedia div:nth-child(2){
+    margin-top: 20%;
+    height: 350px;
+}
+.setMedia div:last-child {
+    margin-top: 30%;
+    height: 360px;
+}
 
 .heading {
     font-size: 4.4rem;
@@ -142,7 +138,7 @@
 
 /* Clients Component */
 .clients {
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 /* Subscribe Component*/

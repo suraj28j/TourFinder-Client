@@ -2,7 +2,8 @@ import React from 'react'
 import world from '../../assets/images/world.png'
 import img1 from '../../assets/images/hero-img01.jpg'
 import img2 from '../../assets/images/hero-img02.jpg'
-import video from '../../assets/videos/hero-video.mp4'
+import video from '../../assets/videos/river.mp4'
+
 
 const Heading = () => {
     return (
@@ -20,15 +21,15 @@ const Heading = () => {
                         Laborum numquam accusantium cumque.</p>
                 </div>
                 <div className='col-md-6'>
-                    <div className='row justify-content-between setImages-row'>
+                    <div className='row  setMedia'>
                         <div className='col-md-4'>
-                            <img src={img1} alt='img1' className='setImages' />
+                            <img src={img1} alt='img1' className='setImages'/>
                         </div>
                         <div className='col-md-4'>
-                            <video src={video} controls className='setImages' />
+                            <video src={video} controls className='setVideo'/>
                         </div>
                         <div className='col-md-4'>
-                            <img src={img2} alt='img2' className='setImages' />
+                            <img src={img2} alt='img2' className='setImages'/>
                         </div>
                     </div>
                 </div>
