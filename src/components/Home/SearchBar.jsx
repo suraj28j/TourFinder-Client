@@ -19,10 +19,10 @@ const SearchBar = () => {
     }
 
     return (
-        <div className='container'>
-            <form className='mt-4 mb-4 ' onSubmit={handleClick} >
-                <div className='row'>
-                    <div className='col-md-10'>
+        <div className='container searchbar'>
+            <div className='row'>
+                <div className='col-md-10'>
+                    <form className='mt-4 mb-4 ' onSubmit={handleClick} >
 
                         <div className='row mt-4 neumorphism'>
                             <div className='col-md-3'>
@@ -34,23 +34,23 @@ const SearchBar = () => {
                             </div>
                             <div className='col-md-3'>
                                 <i className="bi bi-geo-alt-fill text-warning"></i> <label className='form-label' htmlFor='distance'>Distance</label>
-                                <input type='text' id='distance' placeholder='Distance k/h' className='form-control' />
+                                <input type='text' id='distance' placeholder='Distance k/m' className='form-control' />
                             </div>
                             <div className='col-md-1 mt-3 d-flex justify-content-center'>
                                 <div className='vLine'></div>
                             </div>
                             <div className='col-md-3'>
                                 <i className="bi bi-people text-warning"></i> <label className='form-label' htmlFor='maxPeople'>Max People</label>
-                                <input type='text' id='maxPeople' placeholder='0' className='form-control'/>
+                                <input type='text' id='maxPeople' placeholder='0' className='form-control' />
                             </div>
                             <div className='col-md-1 d-flex justify-content-center align-items-center'>
                                 <button type='submit' className='btn btn-warning'><i className="bi bi-search fs-4 text-light"></i></button>
                             </div>
                         </div>
-                    </div>
-                    <div className='col-md-2'></div>
+                    </form>
                 </div>
-            </form>
+                <div className='col-md-2'></div>
+            </div>
         </div>
     )
 }

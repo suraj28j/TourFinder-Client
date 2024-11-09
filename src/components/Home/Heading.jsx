@@ -11,7 +11,7 @@ const Heading = () => {
             <div className='row mt-4'>
                 <div className='col-md-6'>
                     <div className='d-flex'>
-                        <p className='bg-warning italicFont2'>know before you go </p>
+                        <p className='bg-warning italicFont'>know before you go </p>
                         <img src={world} alt='world-img' className='worldImg ms-2 mt-1' />
                     </div>
                     <h1 className='heading'>Travelling opens the doors to creating <span className='text-warning'>memories</span></h1>

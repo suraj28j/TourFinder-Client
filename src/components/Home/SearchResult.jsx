@@ -1,64 +1,44 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { BASE_URL } from '../../utilis/config'
 import { Link, useParams } from 'react-router-dom'
+import useFetch from '../Hooks/useFetch'
 
 const SearchResult = () => {
 
-    const [tours, setTours] = useState([])
-
     const { city } = useParams()
-    // console.log(city);
-
-
-    useEffect(() => {
-        getResult();
-    }, []);
-
-    const getResult = async () => {
-        try {
-            const res = await fetch(`${BASE_URL}/tour/search/`)
-            const result = await res.json()
-            // console.log(result.data);
-            const { data } = result;
-
-            const toursData = data.filter((tour) => {
-                return tour.city === city
-            })
-
-            setTours(toursData);
-
-            console.log("Tours : ", tours);
-
-
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    const { data: tours, loading, error } = useFetch(`${BASE_URL}/tour/findtour/${city}`);
+    // const{data:review} = useFetch(`${BASE_URL}/review/getreview/${id}`)
 
     return (
         <div className='container mt-4'>
-            <div className='row'>
-                {
-                    tours.map((item) => (
-                        <div className=' me-2 mb-2' style={{ width: "auto" }}>
-                            <div className="card" style={{ width: "19rem" }}>
-                                <img src={item.photo} className="card-img-top" alt={item.city} />
-                                <div className="card-body">
-                                    <div className='d-flex justify-content-between'>
-                                        <h6 className="card-title">{item.city}</h6>
-                                        <p><i className="bi bi-star"></i> <span>{item.reviews}</span></p>
-                                    </div>
-                                    <h5 className="card-text"><Link to={`/tours/${item._id}`} className='nav-link navhover'>{item.title}</Link></h5>
-                                    <div className='d-flex justify-content-between'>
-                                        <p><span className='text-warning'>${item.price}</span>/per person</p>
-                                        <Link to={`/tours/${item._id}`}><button className='btn btn-warning'>Book Now</button></Link>
+            {loading && <div className="loader"></div>}
+            {error && <h1>{error}</h1>}
+
+            {!loading && !error && (
+                <div className='row'>
+                    {
+                        tours.map((item) => (
+                            <div className=' me-2 mb-2' style={{ width: "auto" }}>
+                                <div className="card" style={{ width: "19rem" }}>
+                                    <img src={item.photo} className="card-img-top" alt={item.city} />
+                                    <div className="card-body">
+                                        <div className='d-flex justify-content-between'>
+                                            <h6 className="card-title"><i className="bi bi-geo-alt text-warning"></i> {item.city}</h6>
+                                            <p><i className="bi bi-star text-warning"></i> <span>0</span></p>
+                                        </div>
+                                        <h5 className="card-text"><Link to={`/tours/${item._id}`} className='nav-link navhover'>{item.title}</Link></h5>
+                                        <div className='d-flex justify-content-between'>
+                                            <p><span className='text-warning'>${item.price}</span>/per person</p>
+                                            <Link to={`/tours/${item._id}`}><button className='btn btn-warning text-light'>Book Now</button></Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
-                }
-            </div>
+                        ))
+                    }
+                </div>
+            )}
+
         </div>
     )
 }

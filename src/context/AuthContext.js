@@ -15,7 +15,7 @@ const AuthReducer = (state, action) => {
         case "LOGIN_START":
             return {
                 user: null,
-                toke: null,
+                token: null,
                 role: null,
                 loading: false,
                 error: null
@@ -24,7 +24,7 @@ const AuthReducer = (state, action) => {
         case "LOGIN_SUCCESS":
             return {
                 user: action.payload,
-                toke: action.token,
+                token: action.token,
                 role: action.role,
                 loading: false,
                 error: null
@@ -38,7 +38,7 @@ const AuthReducer = (state, action) => {
         case "LOGOUT":
             return {
                 user: null,
-                toke: null,
+                token: null,
                 role: null,
                 loading: false,
                 error: null
@@ -53,17 +53,18 @@ export const AuthContextProvider = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem("user", JSON.stringify(state.user));
-        localStorage.setItem("token", state.toke);
+        localStorage.setItem("token", state.token);
         localStorage.setItem("role", state.role);
     }, [state]);
 
     return (
-        <AuthContext.Provider value={{
-            user: state.user,
-            loading: state.loading,
-            error: state.error,
-            dispatch
-        }}>
+        <AuthContext.Provider
+            value={{
+                user: state.user,
+                loading: state.loading,
+                error: state.error,
+                dispatch
+            }}>
             {children}
         </AuthContext.Provider>
     )

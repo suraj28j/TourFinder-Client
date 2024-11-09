@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import loginImg from '../../assets/images/login.png'
 import userImg from '../../assets/images/user.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../../utilis/config'
+import { toast } from 'react-toastify'
 
 const Register = () => {
+  const navigate = useNavigate()
   const [credentials, setCredentials] = useState({
     name: undefined,
     email: undefined,
@@ -33,9 +35,10 @@ const Register = () => {
         console.log("Error Mesasge : ", result.message);
       }
       if (result.success === true) {
-        alert("Registration Successful")
+        toast.success("Registration Successful");
+        navigate("/login");
       } else {
-        alert("Registration Faild")
+        toast.error("Registration Faild");
       }
     } catch (error) {
       console.log("Internal Error", error);

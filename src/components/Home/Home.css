@@ -1,12 +1,14 @@
-.italicFont2 {
-    /* font-family: GERALDINE; */
+/* .italicFont2 {
+    font-family: GERALDINE;
     border-radius: 50px;
     padding: 1% 2%;
-}
+} */
 .italicFont{
     border-radius: 50px;
     display: inline;
-    padding: 10px;
+    padding: 0px 10px;
+    font-family: Qwigley;
+    font-size:xx-large;
 }
 
 
@@ -52,6 +54,9 @@
 
 
 /* Searchbar Component */
+.searchbar{
+    margin-top: 5%;
+}
 .neumorphism {
     padding: 1rem;
     border-radius: 5rem;
@@ -115,24 +120,26 @@
     line-height: 80px;
     border-radius: 10px 5px 10px 5px;
 }
+.experience img{
+    width: 25rem;
+}
 
 /* Gallery Component*/
-.item {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(4, minmax(120px, 1fr));
-    grid-template-rows: masonry;
+.gallery .col-md-3 {
+   min-width: 18rem;
 }
 
-.item img {
-    width: 300px;
+
+.gallery img {
+    width: 100%;
     height: auto;
-    border-radius: 10px;
     transition: all 0.5s linear;
+    border-radius: 10px;
+    margin: 2%;
 }
 
-.item img:hover {
-    transform: scale(1.07);
+.gallery img:hover {
+    transform: scale(1.03);
 }
 
 

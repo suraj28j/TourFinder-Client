@@ -6,6 +6,7 @@ import './Login.css';
 import { Link, useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../../utilis/config';
 import { AuthContext } from '../../context/AuthContext';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
@@ -30,12 +31,11 @@ const Login = () => {
       const res = await fetch(`${BASE_URL}/auth/loginuser`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
+        credentials:'include',
         body: JSON.stringify(credentials)
       })
       const result = await res.json();
-      console.log(result);
-
-
+      // console.log(result);
       dispatch({
         type: "LOGIN_SUCCESS",
         payload: result.data,
@@ -44,10 +44,10 @@ const Login = () => {
       })
 
       if (result.success === true) {
-        alert("Login Successful");
+        toast.success("Login Successful");
         nevigate("/");
       } else {
-        alert("Login Failed");
+        toast.error("Login Failed");
       }
 
     } catch (error) {

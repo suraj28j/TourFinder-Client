@@ -8,8 +8,8 @@ const FeaturedTours = () => {
     // console.log("tours", tours);
 
     return (
-        <div style={{marginTop:'6%'}}>
-            {loading && <h1>Loading</h1>}
+        <div style={{marginTop:'5%'}}>
+            {loading && <div className="loader"></div>}
             {error && <h1>{error}</h1>}
 
             {!loading && !error && (
@@ -23,12 +23,12 @@ const FeaturedTours = () => {
                                         <div className="card-body">
                                             <div className='d-flex justify-content-between'>
                                                 <h6 className="card-title">{item.city}</h6>
-                                                <p><i className="bi bi-star"></i> <span>{item.reviews}</span></p>
+                                                <p><i className="bi bi-star text-warning"></i> <span>0</span></p>
                                             </div>
                                             <h5 className="card-text"><Link to={`/tours/${item._id}`} className='nav-link navhover'>{item.title}</Link></h5>
                                             <div className='d-flex justify-content-between'>
                                                 <p><span className='text-warning'>${item.price}</span>/per person</p>
-                                                <Link to={`/tours/${item._id}`}><button className='btn btn-warning'>Book Now</button></Link>
+                                                <Link to={`/tours/${item._id}`}><button className='btn btn-warning text-light'>Book Now</button></Link>
                                             </div>
                                         </div>
                                     </div>

@@ -1,39 +1,45 @@
 import React, { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import loginImg from '../../assets/images/login.png'
 import userImg from '../../assets/images/user.png'
-import { BASE_URL } from '../../utilis/config'
+import { BASE_URL, token } from '../../utilis/config'
 
 const UpdateUser = () => {
 
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [credentials, setCredentials] = useState({
         name: undefined,
-        password: undefined
+        email: undefined
     })
 
     const handleChange = (e) => {
         setCredentials((preVal) => ({ ...preVal, [e.target.id]: e.target.value }))
     }
 
-    console.log(credentials);
+    // console.log(credentials);
 
     const handleClick = async (e) => {
         e.preventDefault();
         try {
             const res = await fetch(`${BASE_URL}/user/updateuser/${id}`, {
                 method: "PUT",
-                headers: { "Content-type": "application/json" },
+                headers: {
+                    "Content-type": "application/json",
+                    Authorization: `Bearer ${token}`
+                },
                 body: JSON.stringify(credentials)
             })
             const result = await res.json();
+            // console.log(result);
 
             if (!result.ok) {
                 console.log("Error Mesasge : ", result.message);
             }
             if (result.success === true) {
-                alert("Update Successfully")
+                alert("Update Successfully");
+                navigate("/");
             } else {
                 alert("Update Faild")
             }
@@ -58,7 +64,7 @@ const UpdateUser = () => {
                                     <h3 className='mt-4'>Update Details</h3>
                                     <form onSubmit={handleClick}>
                                         <input type='text' id='name' className='form-control mt-4' placeholder='User Name' onChange={handleChange} />
-                                        <input type='password' id='password' className='form-control mt-3' placeholder='New Password' onChange={handleChange} />
+                                        <input type='email' id='email' className='form-control mt-3' placeholder='New Email' onChange={handleChange} />
                                         <button className='btn btn-dark mt-3 w-100 mb-4'>Update</button>
                                         {/* <p className='mt-4'>Already have an account? <Link to='/login' className='nav-link text-dark'>Login</Link></p> */}
                                     </form>

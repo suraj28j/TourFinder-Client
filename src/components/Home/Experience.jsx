@@ -28,7 +28,7 @@ const Experience = () => {
                     </div>
                 </div>
                 <div className='col-md-6 d-flex justify-content-center'>
-                    <img src={experienceImg} alt='experienceImg' className='w-75' />
+                    <img src={experienceImg} alt='experienceImg' className='' />
                 </div>
             </div>
         </div>
