@@ -1,14 +1,14 @@
-/* .italicFont2 {
-    font-family: GERALDINE;
-    border-radius: 50px;
-    padding: 1% 2%;
-} */
-.italicFont{
+@font-face {
+    font-family: Qwigley;
+    src: url(../../assets/font/Qwigley-Regular.ttf)
+}
+
+.italicFont {
     border-radius: 50px;
     display: inline;
     padding: 0px 10px;
     font-family: Qwigley;
-    font-size:xx-large;
+    font-size: xx-large;
 }
 
 
@@ -20,25 +20,29 @@
 
 
 /* for video and two images */
-.setImages{
+.setImages {
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
-.setVideo{
+
+.setVideo {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     /* border: 2px solid; */
 }
+
 .setMedia div:first-child {
     margin-top: 10%;
     height: 360px;
 }
-.setMedia div:nth-child(2){
+
+.setMedia div:nth-child(2) {
     margin-top: 20%;
     height: 350px;
 }
+
 .setMedia div:last-child {
     margin-top: 30%;
     height: 360px;
@@ -54,9 +58,10 @@
 
 
 /* Searchbar Component */
-.searchbar{
+.searchbar {
     margin-top: 5%;
 }
+
 .neumorphism {
     padding: 1rem;
     border-radius: 5rem;
@@ -64,10 +69,12 @@
     box-shadow: 10px 10px 30px #c5c5c5,
         -10px -10px 30px #ffffff;
 }
-.neumorphism input{
+
+.neumorphism input {
     outline: 0px;
     border: 0px;
 }
+
 .vLine {
     border-right: 2px solid rgb(170, 158, 158);
     height: 45px;
@@ -110,9 +117,11 @@
 }
 
 /* Experince Component*/
-.experience{
+.experience {
     margin-top: 5%;
+    margin-bottom: 5%;
 }
+
 .numBox {
     width: 80px;
     height: 80px;
@@ -120,23 +129,46 @@
     line-height: 80px;
     border-radius: 10px 5px 10px 5px;
 }
-.experience img{
+
+.experience img {
     width: 25rem;
 }
 
 /* Gallery Component*/
-.gallery .col-md-3 {
-   min-width: 18rem;
+
+.gallery {
+    display: grid;
+    padding: 40px 0px;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 10px;
+    grid-auto-flow: dense;
 }
 
+.gallery div {
+    border-radius: 10px;
+    grid-row: span 17;
+}
+
+.gallery>div:nth-of-type(2n) {
+    grid-row: span 13;
+}
+
+.gallery>div:nth-of-type(3n+3) {
+    grid-row: span 7;
+}
+
+.gallery>div:nth-of-type(3n+5) {
+    grid-row: span 15;
+}
 
 .gallery img {
     width: 100%;
-    height: auto;
-    transition: all 0.5s linear;
+    height: 100%;
     border-radius: 10px;
-    margin: 2%;
+    transition: all 0.5s linear;
 }
+
 
 .gallery img:hover {
     transform: scale(1.03);
@@ -145,7 +177,7 @@
 
 /* Clients Component */
 .clients {
-    margin-top: 8%;
+    margin-top: 5%;
 }
 
 /* Subscribe Component*/
@@ -153,7 +185,8 @@
     margin-top: 10%;
     background-color: skyblue;
 }
-.inputGroup{
+
+.inputGroup {
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -161,12 +194,14 @@
     background-color: #ffffff;
     padding: 10px;
 }
-.inputGroup input{
+
+.inputGroup input {
     outline: none;
     border: 0px;
     width: 100%;
 }
-.inputGroup button{
+
+.inputGroup button {
     border-radius: 5px;
     border: 0px;
 }

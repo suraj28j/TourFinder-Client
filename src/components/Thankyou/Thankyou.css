@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Outrun;
+    src: url(../../assets/font/Outrun\ future\ Bold\ Italic.otf);
+  }
+
+.billy{
+    font-family: Outrun;
+}

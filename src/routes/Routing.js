@@ -7,6 +7,7 @@ import Tours from '../components/Tours/Tours'
 import SingleTour from '../components/SingleTour/SingleTour'
 import UpdateUser from '../components/UpdateUser/UpdateUser'
 import SearchResult from '../components/Home/SearchResult'
+import Thankyou from '../components/Thankyou/Thankyou'
 
 
 const Routing = () => {
@@ -19,6 +20,7 @@ const Routing = () => {
             <Route path='/tours/:id' element={<SingleTour />} />
             <Route path='/updateuser/:id' element={<UpdateUser />} />
             <Route path='/tour/search/:city' element={<SearchResult />} />
+            <Route path='/thank-you' element={<Thankyou />} />
 
         </Routes>
     )

@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import './SingleTour.css';
 import { FaStar } from 'react-icons/fa'
 
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import useFetch from '../Hooks/useFetch';
 import { BASE_URL, token } from '../../utilis/config';
 import { AuthContext } from '../../context/AuthContext';
@@ -10,7 +10,10 @@ import avatar from '../../assets/images/avatar.jpg';
 import { toast } from 'react-toastify';
 
 const SingleTour = () => {
+
   // window.scrollTo(0, 0)
+
+  const nevigate = useNavigate();
   const { id } = useParams();
   const { user } = useContext(AuthContext);
 
@@ -19,11 +22,13 @@ const SingleTour = () => {
   const [rating, setRating] = useState(null);
   const [comment, setComment] = useState("");
 
-  const [userInfo,setUserInfo] = useState({
-    name:undefined,
-    phone:undefined,
-    date:undefined
+  const [userInfo, setUserInfo] = useState({
+    name: undefined,
+    phone: undefined,
+    date: undefined,
+    guest: undefined
   })
+
 
   // geting tour data and review data
   // --------------------------------------------------------------------------------------- //
@@ -35,11 +40,11 @@ const SingleTour = () => {
 
 
 
+  // ------------------------- for add review and comment -------------------------- //
+
   const handleChange = (e) => {
     setComment(e.target.value)
   }
-
-  // ------------------------- for add review and comment -------------------------- //
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -56,13 +61,12 @@ const SingleTour = () => {
           body: JSON.stringify({ rating, comment, id, user })
         })
         const result = await res.json();
-        console.log(result);
+        // console.log(result);
         if (result.success === true) {
           toast.success("Review Created Successfully");
           setTimeout(() => {
             window.location.reload();
           }, 1000)
-          // navigate(`/tours/${id}`)
         } else {
           toast.error("Somthing error");
           console.log(result.message);
@@ -83,24 +87,42 @@ const SingleTour = () => {
   // ------------------------------ for tour booking ----------------------------- //
 
   const bookingHandleChange = (e) => {
-    setUserInfo((preVal)=>({...preVal,[e.target.id]:e.target.value}));
+    setUserInfo((preVal) => ({ ...preVal, [e.target.id]: e.target.value }));
     // console.log(userInfo);
   }
 
   const dateHandleChange = (e) => {
-    setUserInfo((preVal)=> ({...preVal,date:e.target.value}));
+    setUserInfo((preVal) => ({ ...preVal, date: e.target.value }));
     // console.log(userInfo);
   }
 
-  const bookingHandleClick = (e) => {
+  const bookingHandleClick = async (e) => {
     e.preventDefault();
 
     if (user !== null) {
-
+      try {
+        const res = await fetch(`${BASE_URL}/booking/createbooking`, {
+          method: "POST",
+          headers: { "Content-type": "application/json",
+                    Authorization: ` Bearer ${token}`
+           },
+          body: JSON.stringify(userInfo)
+        })
+        const result = await res.json();
+        if (result.success === true) {
+          nevigate("/thank-you");
+        } else {
+          toast.error("Something Error");
+          console.log(result.message);
+        }
+      } catch (error) {
+        console.log("Internal Error : ", error);
+      }
     } else {
       toast.warn("Please Login");
     }
   }
+  // -------------------------------------------------------------------------------// 
 
 
 
@@ -202,12 +224,15 @@ const SingleTour = () => {
               <h6 className='information'>Information</h6>
 
               <form onSubmit={bookingHandleClick}>
-                <div className='userInfo border'>
-                  <input type='text' id='name' placeholder='Full Name' className='form-control' onChange={bookingHandleChange} />
+                <div className='bookingForm border'>
+                  <input type='text' id='name' required placeholder='Full Name' className='form-control' onChange={bookingHandleChange} />
                   <hr className='ms-3 me-3' />
-                  <input type='text' id='phone' placeholder='Phone Number' className='form-control' onChange={bookingHandleChange} />
+                  <input type='text' id='phone' required placeholder='Phone Number' className='form-control' onChange={bookingHandleChange} />
                   <hr className='ms-3 me-3' />
-                  <input type='date' id='date' className='form-control' onChange={dateHandleChange} />
+                  <div className='d-flex justify-content-center mb-1'>
+                    <input type='date' id='date' required className='form-control' onChange={dateHandleChange} />
+                    <input type='text' id='guest' required placeholder='Number of Guest' className='form-control' onChange={bookingHandleChange} />
+                  </div>
                 </div>
 
                 {/* for booking charge */}
