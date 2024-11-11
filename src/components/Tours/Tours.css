@@ -6,3 +6,17 @@
     height: 100%;
     filter: brightness(50%);
 }
+
+.button{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    background-color: goldenrod;
+    color: white;
+}
+.button:hover{
+    background-color: white;
+    color: goldenrod;
+    border: 1px solid goldenrod;
+}

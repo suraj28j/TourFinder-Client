@@ -20,6 +20,7 @@ const Routing = () => {
             <Route path='/tours/:id' element={<SingleTour />} />
             <Route path='/updateuser/:id' element={<UpdateUser />} />
             <Route path='/tour/search/:city' element={<SearchResult />} />
+            {/* <Route path='/tour/search/:city/:distance/:maxGroupSize' element={<SearchResult />} /> */}
             <Route path='/thank-you' element={<Thankyou />} />
 
         </Routes>

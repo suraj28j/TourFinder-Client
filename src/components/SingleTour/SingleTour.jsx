@@ -66,7 +66,7 @@ const SingleTour = () => {
           toast.success("Review Created Successfully");
           setTimeout(() => {
             window.location.reload();
-          }, 1000)
+          }, 1500)
         } else {
           toast.error("Somthing error");
           console.log(result.message);
@@ -76,7 +76,7 @@ const SingleTour = () => {
       }
 
     } else {
-      toast.warn("Please Login")
+      toast.warn("Please login to submit a review")
     }
 
   }
@@ -119,7 +119,7 @@ const SingleTour = () => {
         console.log("Internal Error : ", error);
       }
     } else {
-      toast.warn("Please Login");
+      toast.warn("Please login for booking");
     }
   }
   // -------------------------------------------------------------------------------// 
