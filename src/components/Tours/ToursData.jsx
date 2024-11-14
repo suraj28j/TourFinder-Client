@@ -21,7 +21,10 @@ const ToursData = () => {
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = toursData.slice(firstPostIndex, lastPostIndex);
-  
+
+  const setTourPage = (pageNum) => {
+    setCurrentPage(pageNum)
+  }
   return (
     <div>
       {
@@ -62,7 +65,7 @@ const ToursData = () => {
               <div className='col-md-4  d-flex justify-content-center'>
                 {
                   [1, 2].map((num) => (
-                    <button className='button ms-2 mt-4' onClick={() => setCurrentPage(num)}>{num}</button>
+                    <button className='button ms-2 mt-4' onClick={() => setTourPage(num)}>{num}</button>
                   ))
                 }
               </div>
