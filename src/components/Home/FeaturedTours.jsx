@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom'
 
 const FeaturedTours = () => {
     const { data: tours, loading, error } = useFetch(`${BASE_URL}/tour/getalltour`);
+    // console.log("tours : ",tours);
+    
     return (
-        <div className='container'>
+        <div className='container featuredTours'>
             <div>
                 <p className='bg-warning italicFont'>Explore</p>
                 <h3 className='mt-4'>Our feature tours</h3>

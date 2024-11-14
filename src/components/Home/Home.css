@@ -100,6 +100,9 @@
 }
 
 /* FeatureTour */
+.featuredTours{
+    margin-top: 5%;
+}
 .card {
     box-shadow: 1px 1px 20px rgb(208, 205, 205);
     border: 0px;
