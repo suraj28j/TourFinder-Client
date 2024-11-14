@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import './SingleTour.css';
 import { FaStar } from 'react-icons/fa'
 
@@ -10,7 +10,7 @@ import avatar from '../../assets/images/avatar.jpg';
 import { toast } from 'react-toastify';
 
 const SingleTour = () => {
-
+  
   // window.scrollTo(0, 0)
 
   const nevigate = useNavigate();
@@ -21,14 +21,21 @@ const SingleTour = () => {
 
   const [rating, setRating] = useState(null);
   const [comment, setComment] = useState("");
-
+  
+  
+  
   const [userInfo, setUserInfo] = useState({
     name: undefined,
     phone: undefined,
     date: undefined,
-    guest: undefined
+    guest: undefined,
+    id:id,
   })
+  // const numberOfGuest = useRef(1)
 
+
+  
+  
 
   // geting tour data and review data
   // --------------------------------------------------------------------------------------- //
@@ -88,13 +95,14 @@ const SingleTour = () => {
 
   const bookingHandleChange = (e) => {
     setUserInfo((preVal) => ({ ...preVal, [e.target.id]: e.target.value }));
-    // console.log(userInfo);
+    console.log(userInfo);
   }
-
+  
   const dateHandleChange = (e) => {
     setUserInfo((preVal) => ({ ...preVal, date: e.target.value }));
     // console.log(userInfo);
   }
+
 
   const bookingHandleClick = async (e) => {
     e.preventDefault();
@@ -103,9 +111,10 @@ const SingleTour = () => {
       try {
         const res = await fetch(`${BASE_URL}/booking/createbooking`, {
           method: "POST",
-          headers: { "Content-type": "application/json",
-                    Authorization: ` Bearer ${token}`
-           },
+          headers: {
+            "Content-type": "application/json",
+            Authorization: ` Bearer ${token}`
+          },
           body: JSON.stringify(userInfo)
         })
         const result = await res.json();
@@ -229,16 +238,22 @@ const SingleTour = () => {
                   <hr className='ms-3 me-3' />
                   <input type='text' id='phone' required placeholder='Phone Number' className='form-control' onChange={bookingHandleChange} />
                   <hr className='ms-3 me-3' />
-                  <div className='d-flex justify-content-center mb-1'>
-                    <input type='date' id='date' required className='form-control' onChange={dateHandleChange} />
-                    <input type='text' id='guest' required placeholder='Number of Guest' className='form-control' onChange={bookingHandleChange} />
+                  <div className='d-flex align-items-center  mb-1 row'>
+                    <div className='col-md-6'>
+                      <input type='date' id='date' required className='ms-4' onChange={dateHandleChange} />
+                    </div>
+                    <div className='col-md-6'>
+                      <input type='text' id='guest' required placeholder='Number of Guest' className='form-control' value={this} onChange={bookingHandleChange}/>
+
+                    </div>
+
                   </div>
                 </div>
 
                 {/* for booking charge */}
                 <div className='bookingcharge'>
                   <div className='d-flex justify-content-between'>
-                    <p>{tours.price} * 1 person</p>
+                    <p>{tours.price} x 1 person</p>
                     <p>{tours.price}</p>
                   </div>
                   <div className='d-flex justify-content-between'>
@@ -247,7 +262,7 @@ const SingleTour = () => {
                   </div>
                   <div className='d-flex justify-content-between'>
                     <h6>Total</h6>
-                    <h6>{tours.price + 10}</h6>
+                    <h6>{(tours.price*1) + 10}</h6>
                   </div>
                   <button type='submit' className='btn btn-warning mb-4 mt-4 w-75'>Book Now</button>
                 </div>
