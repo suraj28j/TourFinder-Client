@@ -27,7 +27,7 @@ const ToursData = () => {
           {
             currentPosts.map((item) => (
               <div className='col-md-3' key={item.place}>
-                <div className="card" style={{ width: "19rem" }}>
+                <div className="card" style={{ minwidth: "19rem" }}>
                   <img src={item.photo} className="card-img-top" alt={item.city} />
                   <div className="card-body">
                     <div className='d-flex justify-content-between'>

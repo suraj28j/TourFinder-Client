@@ -100,9 +100,10 @@
 }
 
 /* FeatureTour */
-.featuredTours{
+.featuredTours {
     margin-top: 5%;
 }
+
 .card {
     box-shadow: 1px 1px 20px rgb(208, 205, 205);
     border: 0px;
@@ -113,6 +114,7 @@
 .card:hover {
     transform: scale(1.07);
 }
+
 
 /* Experince Component*/
 .experience {
@@ -201,4 +203,16 @@
 .inputGroup button {
     border-radius: 5px;
     border: 0px;
+}
+
+
+
+
+@media screen and (max-width:426px) {
+    .vLine {
+        border-top: 2px solid rgb(170, 158, 158);
+        height: 0px;
+        margin-bottom: 1rem;
+        width: 20rem;
+    }
 }
