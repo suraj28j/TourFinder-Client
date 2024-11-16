@@ -55,6 +55,7 @@ const SingleTour = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+console.log(token);
 
     if (user !== null) {
 
@@ -162,7 +163,7 @@ const SingleTour = () => {
                   <span className='ms-4 me-4'><i className="bi bi-people"></i> {tours.maxGroupSize} people</span>
                 </p>
                 <h5 className=' ms-3 mt-2'>Discription</h5>
-                <p className=' ms-3 mt-2'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <p className=' ms-3 mt-2'>{tours.desc}</p>
               </div>
 
               {/* for user rating and comment */}
