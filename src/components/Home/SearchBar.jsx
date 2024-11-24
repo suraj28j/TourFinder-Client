@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../../utilis/config';
 
 const SearchBar = () => {
 
@@ -22,7 +23,7 @@ const SearchBar = () => {
         <div className='container searchbar'>
             <div className='row'>
                 <div className='col-md-10'>
-                    <form className='mt-4 mb-4' onSubmit={handleClick}>  {/* action="http://localhost:3000/tour/search" */}
+                    <form className='mt-4 mb-4' onSubmit={handleClick} >  {/* action={`${BASE_URL}/tour/search`} */}
 
                         <div className='row mt-4 neumorphism'>
                             <div className='col-md-3'>

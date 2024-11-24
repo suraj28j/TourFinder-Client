@@ -1,29 +1,14 @@
-/* .textColor:visited{
-    color:goldenrod;
-} */
-
 .logoDimension{
     width:130px;
     height:60px;
 }
 
-/* .regbtn{
-    background-color: goldenrod;
-    color: white;
-    border-radius: 15px;
-    width: 80px;
-    text-align: center;
-    height: 30px;
-    line-height: 15px;
-} */
 
-.navhover:hover{
+.btn:hover{
     color: goldenrod;
 }
 
 
-.name,.logout{
-    /* border-radius: 15px; */
-}
+
 
 

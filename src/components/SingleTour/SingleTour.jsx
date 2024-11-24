@@ -55,7 +55,6 @@ const SingleTour = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-console.log(token);
 
     if (user !== null) {
 
